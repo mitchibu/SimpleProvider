@@ -6,5 +6,5 @@ repositories {
 }
 
 dependencies {
-    compile 'jp.gr.java_conf.mitchibu.lib:simpleprovider:1.0.0'
+    compile 'jp.gr.java_conf.mitchibu.lib:simpleprovider:1.0.1'
 }
