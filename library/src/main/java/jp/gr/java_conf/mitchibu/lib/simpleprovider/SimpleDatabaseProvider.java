@@ -1,9 +1,5 @@
 package jp.gr.java_conf.mitchibu.lib.simpleprovider;
 
-import java.util.ArrayList;
-
-import jp.gr.java_conf.mitchibu.lib.simpleprovider.annotation.Database;
-
 import android.content.ContentProviderOperation;
 import android.content.ContentProviderResult;
 import android.content.ContentUris;
@@ -16,6 +12,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
+
+import java.util.ArrayList;
+
+import jp.gr.java_conf.mitchibu.lib.simpleprovider.annotation.Database;
 
 public class SimpleDatabaseProvider extends SimpleProvider {
 	public static final String SQL_INSERT_OR_REPLACE = "__sql_insert_or_replace__";
@@ -143,6 +143,11 @@ public class SimpleDatabaseProvider extends SimpleProvider {
 
 			@Override
 			public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+				onUpdateDatabase(db, oldVersion, newVersion);
+			}
+
+			@Override
+			public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 				onUpdateDatabase(db, oldVersion, newVersion);
 			}
 		};
