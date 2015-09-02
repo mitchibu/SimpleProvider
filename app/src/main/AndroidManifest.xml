@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="${applicationId}"
+            android:name=".MainProvider"
+            android:exported="false"/>
     </application>
 
 </manifest>

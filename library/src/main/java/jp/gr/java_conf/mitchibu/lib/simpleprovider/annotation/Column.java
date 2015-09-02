@@ -14,4 +14,5 @@ public @interface Column {
 	boolean primaryKey() default false;
 	boolean autoIncrement() default false;
 	String defaultValue() default "";
+	String[] indices() default {};
 }
